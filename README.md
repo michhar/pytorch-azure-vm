@@ -1,6 +1,8 @@
-# New Data Science Virtual Machine Kernel for PyTorch 1.0 Projects
+# New Data Science Virtual Machine for PyTorch v1.0 and v0.3.1 Projects
 
-The goal of this repository is to supply a simple mechanism for deploying setting up a PyTorch 1.0 (Preview) environment (https://pytorch.org/). The button below deploys to an [Ubuntu-based Data Science VM](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro) (NC-series) to azure and installs the relevant dependencies.
+The goal of this repository is to supply a simple mechanism for deploying setting up a PyTorch 1.0 (Preview) and PyTorch 0.3.1 (legacy release no longer available) environment ([See official PyTorch page for other releases](https://pytorch.org/)). The button below deploys to an [Ubuntu-based Data Science VM](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro) (NC-series) to azure and installs the relevant dependencies.
+
+Both builds of PyTorch include LibTorch.
 
 **NOTE**: An Azure subscription is required - see below.
 
@@ -56,7 +58,7 @@ The resources are created, and then a [custom script extension](https://docs.mic
 
 It does the following:
 
-- Install PyTorch 1.0 into an environment on the DSVM
+- Install PyTorch 1.0 and 0.3.1 into a conda environment on the DSVM
 - Installs the environment as a kernel for jupyter notebooks so that the notebooks can be run.
 - Makes sure that permissions are appropriate to the admin user.
 
