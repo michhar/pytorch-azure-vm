@@ -41,7 +41,7 @@ chown -R ${adminUser}:${adminUser} ${condapath}
 # This was built on a NC6 DSVM (Ubuntu VM with NVIDIA GPU/CUDA 9.2)
 wget https://generalstore123.blob.core.windows.net/pytorchwheels/torch-1.0.0a0+8619230-cp35-cp35m-linux_x86_64.whl
 
-/anaconda/envs/pytorch10/bin/python -m pip install *.whl
+sudo /anaconda/envs/pytorch10/bin/python -m pip install *.whl
 
 ## now install it as a kernel:
 /anaconda/envs/pytorch10/bin/python -m ipykernel install --name pytorch_preview --display-name "Python 3.5 - PyTorch 1.0"
@@ -56,7 +56,7 @@ chown -R ${adminUser}:${adminUser} ${condapath}
 # Install PyTorch 0.3.1 into environment with cuda 9.2 support as DSVM is on this now
 wget https://generalstore123.blob.core.windows.net/pytorchwheels/torch-1.0.0a0+8619230-cp35-cp35m-linux_x86_64.whl
 
-/anaconda/envs/py35/bin/python -m pip install *.whl
+sudo /anaconda/envs/py35/bin/python -m pip install *.whl
 
 # now install it as a kernel:
 /anaconda/envs/pytorch031/bin/python -m ipykernel install --name pytorch_031 --display-name "Python 3.5 - PyTorch 0.3.1"
