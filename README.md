@@ -1,6 +1,6 @@
-# fastaivm
+# New Data Science Virtual Machine Kernel for PyTorch 1.0 Projects
 
-The goal of this repository is to supply a simple mechanism for deploying the requirements for the [fastai course: Practical Deep Learning for Coders: Part 1](http://course.fast.ai/index.html). The button below deploys to an [Ubuntu-based Data Science VM](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro) (NC-series) to azure and installs the relevant dependencies.
+The goal of this repository is to supply a simple mechanism for deploying setting up a PyTorch 1.0 (Preview) environment (https://pytorch.org/). The button below deploys to an [Ubuntu-based Data Science VM](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro) (NC-series) to azure and installs the relevant dependencies.
 
 **NOTE**: An Azure subscription is required - see below.
 
@@ -14,7 +14,7 @@ Hardware compute [fees](https://azure.microsoft.com/en-us/marketplace/partners/m
 
 Just click this button (see below for details).
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjreynolds01%2Ffastaivm%2Fmaster%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%michhar%2Fpytorch-azure-vm%2Fmaster%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
@@ -54,23 +54,8 @@ The resources are created, and then a [custom script extension](https://docs.mic
 
 It does the following:
 
-- Clones the [fastai repository](https://github.com/fastai/fastai.git) so all the notebooks are available
-- Downloads and unzips the [data for the first lab](http://files.fast.ai/data/dogscats.zip).
-- Cleans up anaconda and installs a new conda env based on the [environment file](https://github.com/fastai/fastai/blob/master/environment.yml) in the fastai repository (the env name is fastai and it is installed in /home/\<adminUser\>/.conda/envs).
+- Install PyTorch 1.0 into an environment on the DSVM
 - Installs the environment as a kernel for jupyter notebooks so that the notebooks can be run.
 - Makes sure that permissions are appropriate to the admin user.
 
 See the [dsvm-setup.sh](dsvm-setup.sh) file for details.
-
-## How do I access the course materials?
-
-- Identify the DNS name prefix and geo used in deployment.
-- Proceed to `https://<dnsprefix>.<location>.cloudapp.azure.com:8000` to access the jupyter server
-  - **NOTE**: You will encounter a certificate error - proceed through it
-- Log in with the username and password you specified when you deployed.
-- Within the jupyter file navigator, you should see a large list of directories and files.
-  - Navigate to `fastai -> courses -> dl1`
-  - Within, `dl1`, click on  `lesson1.ipynb` to launch the notebook.
-- In the tab that has launched notebook, click on the `kernel` menu item, Select `Change kernel`, and select `fastai` in order to change the kernel to the right environment.
-  - **Note** - you will likely need to do this step for each notebook!
-- Watch videos at [fastai](http://course.fast.ai/index.html), execute cells, experiment, and learn!
