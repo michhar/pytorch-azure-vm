@@ -33,7 +33,7 @@ fi
 /anaconda/envs/pytorch10/bin/conda install torchvision pytorch_nightly cuda92 -c pytorch
 
 ## now install it as a kernel:
-$condapath/pytorch10/bin/python -m ipykernel install --name pytorch_preview --display-name "Python (PyTorch 1.0)"
+$condapath/pytorch10/bin/python -m ipykernel install --name pytorch_preview --display-name "Python 3.5 - PyTorch 1.0"
 
 /anaconda/envs/py35/bin/conda env create --name pytorch031 ipykernel
 
@@ -41,7 +41,7 @@ $condapath/pytorch10/bin/python -m ipykernel install --name pytorch_preview --di
 /anaconda/envs/pytorch031/bin/pip install torchvision torch==0.3.1
 
 ## now install it as a kernel:
-$condapath/pytorch031/bin/conda -m ipykernel install --name pytorch_preview --display-name "Python (PyTorch 0.3.1)"
+$condapath/pytorch031/bin/conda -m ipykernel install --name pytorch_preview --display-name "Python 3.5 - PyTorch 0.3.1"
 
 ## update appropriate permissions
 chown -R ${adminUser}:${adminUser} ${condapath}
