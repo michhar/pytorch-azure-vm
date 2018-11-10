@@ -27,13 +27,13 @@ if [ ! -d $condapath ]; then
     mkdir -p $condapath
 fi
 
-/anaconda/envs/py35/bin/conda create --name pytorch1.0
+/anaconda/envs/py35/bin/conda create --name pytorch10
 
 # Install PyTorch 1.0 into environment with cuda 9.2 support as DSVM is on this now
-/anaconda/envs/pytorch1.0/conda install pytorch_nightly cuda92 -c pytorch
+/anaconda/envs/pytorch10/bin/conda install pytorch_nightly cuda92 -c pytorch
 
 ## now install it as a kernel:
-$condapath/pytorch1.0/bin/python -m ipykernel install --name pytorch1.0 --display-name "Python (PyTorch 1.0)"
+$condapath/pytorch10/bin/python -m ipykernel install --name pytorch_preview --display-name "Python (PyTorch 1.0)"
 
 ## update appropriate permissions
 chown -R ${adminUser}:${adminUser} ${condapath}
