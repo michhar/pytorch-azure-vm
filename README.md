@@ -14,6 +14,8 @@ Hardware compute [fees](https://azure.microsoft.com/en-us/marketplace/partners/m
 
 Just click this button (see below for details).
 
+**IMPORTANT NOTE**:  Due to JupyterHub requirements, keep your admin name for this VM all lowercase.
+
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmichhar%2Fpytorch-azure-vm%2Fmaster%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
