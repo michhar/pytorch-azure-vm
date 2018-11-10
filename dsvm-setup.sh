@@ -30,12 +30,12 @@ fi
 /anaconda/envs/py35/bin/conda create --name pytorch10 ipykernel conda
 
 # Install PyTorch 1.0 into environment with cuda 9.2 support as DSVM is on this now
-# /anaconda/envs/pytorch10/bin/python -m conda install torchvision pytorch_nightly cuda92 -c pytorch
+/anaconda/envs/pytorch10/bin/python -m conda install torchvision pytorch_nightly cuda92 -c pytorch
 
 # A custom CUDA build of PyTorch 1.0 from commit 8619230 to include usage of an old cmake
 # This was built on a NC6 DSVM (Ubuntu VM with NVIDIA GPU/CUDA 9.2)
-wget https://generalstore123.blob.core.windows.net/pytorchwheels/torch-1.0.0a0+8619230-cp35-cp35m-linux_x86_64.whl
-/anaconda/envs/pytorch10/bin/python -m pip install torch-1.0.0a0+8619230-cp35-cp35m-linux_x86_64.whl
+# wget https://generalstore123.blob.core.windows.net/pytorchwheels/torch-1.0.0a0+8619230-cp35-cp35m-linux_x86_64.whl
+# /anaconda/envs/pytorch10/bin/python -m pip install torch-1.0.0a0+8619230-cp35-cp35m-linux_x86_64.whl
 
 ## now install it as a kernel:
 /anaconda/envs/pytorch10/bin/python -m ipykernel install --name pytorch_preview --display-name "Python 3.5 - PyTorch 1.0"
