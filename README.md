@@ -1,6 +1,6 @@
 # New Data Science Virtual Machine for PyTorch v1.0 and v0.3.1 Projects
 
-The goal of this repository is to supply a simple mechanism for deploying setting up a PyTorch 1.0 (Preview) and PyTorch 0.3.1 (legacy release no longer available) environment ([See official PyTorch page for other releases](https://pytorch.org/)). The button below deploys to an [Ubuntu-based Data Science VM](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro) (NC-series) to azure and installs the relevant dependencies.
+The goal of this repository is to supply a simple mechanism for deploying setting up a PyTorch 1.0 (Preview) and PyTorch 0.3.1 (legacy release) environment ([See official PyTorch page for other releases](https://pytorch.org/)). The button below deploys to an [Ubuntu-based Data Science VM](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro) (NC-series) to azure and installs the relevant dependencies.
 
 **NOTE**: An Azure subscription is required - see below.
 
