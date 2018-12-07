@@ -50,17 +50,14 @@ chown -R ${adminUser}:${adminUser} ${condapath}
 
 #### PYTORCH 0.3.1 ####
 
-/anaconda/envs/py35/bin/conda create --name pytorch031 ipykernel conda
+/anaconda/envs/py35/bin/conda create --name pytorch031 ipykernel conda numpy pyyaml scipy ipython mkl
 
 ## update appropriate permissions
 chown -R ${adminUser}:${adminUser} ${condapath}
 
 # # Install PyTorch 0.3.1 into environment with cuda 9.2 support as DSVM is on this now
-# /anaconda/envs/pytorch031/bin/python -m conda install torchvision torch==0.3.1 cuda92 -c pytorch -y
-
-# A custom CUDA build of PyTorch 0.3.1
-# This was built on a NC6 DSVM (Ubuntu VM with NVIDIA GPU/CUDA 9.2)
-/anaconda/envs/pytorch031/bin/python -m pip install https://generalstore123.blob.core.windows.net/pytorchwheels/torch-0.3.1b0+2b47480-cp35-cp35m-linux_x86_64.whl
+/anaconda/envs/pytorch031/bin/python -m conda install -c soumith magma-cuda92
+/anaconda/envs/pytorch031/bin/conda install torchvision pytorch==0.3.1 -c pytorch
 
 ## Install it as a kernel
 /anaconda/envs/pytorch031/bin/python -m ipykernel install --name pytorch_031 --display-name "Python 3.5 - PyTorch 0.3.1"
