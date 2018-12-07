@@ -37,8 +37,10 @@ chown -R ${adminUser}:${adminUser} ${condapath}
 # Install PyTorch 1.0 into environment with cuda 9.2 support as DSVM is on this now
 /anaconda/envs/pytorch10/bin/python -m conda install torchvision pytorch-nightly cuda92 -c pytorch -y
 
-# LibTorch
-# wget https://download.pytorch.org/libtorch/nightly/cu92/libtorch-shared-with-deps-latest.zip
+# LibTorch - install into /usr/local/lib
+wget https://download.pytorch.org/libtorch/nightly/cu92/libtorch-shared-with-deps-latest.zip
+unzip libtorch-shared-with-deps-latest.zip
+sudo mv libtorch /usr/local/lib/python3.5/dist-packages/torch
 
 
 # A custom CUDA build of PyTorch 1.0 from commit 8619230 to include usage of an old cmake
