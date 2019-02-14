@@ -42,13 +42,24 @@ wget https://download.pytorch.org/libtorch/nightly/cu92/libtorch-shared-with-dep
 unzip libtorch-shared-with-deps-latest.zip
 sudo mv libtorch /usr/local/lib/python3.5/dist-packages/torch
 
-
-# A custom CUDA build of PyTorch 1.0 from commit 8619230 to include usage of an old cmake
-# This was built on a NC6 DSVM (Ubuntu VM with NVIDIA GPU/CUDA 9.2)
-#/anaconda/envs/pytorch10/bin/python -m pip install https://generalstore123.blob.core.windows.net/pytorchwheels/torch-1.0.0a0+8619230-cp35-cp35m-linux_x86_64.whl
-
 ## Install it as a kernel
 /anaconda/envs/pytorch10/bin/python -m ipykernel install --name pytorch_preview --display-name "Python 3.5 - PyTorch 1.0"
+
+
+#### PYTORCH 0.4.1 ####
+
+/anaconda/envs/py35/bin/conda create --name pytorch041 ipykernel conda numpy pyyaml scipy ipython mkl
+
+## update appropriate permissions
+chown -R ${adminUser}:${adminUser} ${condapath}
+
+# # Install PyTorch 0.4.1 into environment with cuda 9.2 support as DSVM is on this now
+/anaconda/envs/pytorch041/bin/python -m conda install -c soumith magma-cuda92
+/anaconda/envs/pytorch041/bin/conda install torchvision pytorch==0.4.1 -c pytorch
+
+## Install it as a kernel
+/anaconda/envs/pytorch041/bin/python -m ipykernel install --name pytorch_041 --display-name "Python 3.5 - PyTorch 0.4.1"
+
 
 #### PYTORCH 0.3.1 ####
 
