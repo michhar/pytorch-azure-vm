@@ -67,7 +67,7 @@
       "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
       "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]",
       "apiVersion": "2015-06-15",
-      "scriptUri": "https://raw.githubusercontent.com/michhar/fastaivm/master/dsvm-setup.sh"
+      "scriptUri": "https://raw.githubusercontent.com/michhar/pytorch-azure-vm/master/dsvm-setup.sh"
     },
     "resources": [
       {
